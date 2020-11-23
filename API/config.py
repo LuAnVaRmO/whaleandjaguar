@@ -13,3 +13,5 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///users.db'
     UPLOAD_FOLDER = "./static"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    static_folder = 'client/build'
+    static_url_path = ''

@@ -1,6 +1,6 @@
 from aylienapiclient import textapi
 from config import DevelopmentConfig
-from flask import Flask, render_template, request, flash, jsonify, session
+from flask import Flask, send_from_directory, request, flash, jsonify, session
 from flask_cors import CORS
 import sqlalchemy as sa
 from flask_sqlalchemy import SQLAlchemy
@@ -137,6 +137,11 @@ def index():
     summary = client.Summarize({'url': url, 'sentences_number': number_of_ntences})
     nlpdata['summary'] = summary
     return jsonify(nlpdata)
+
+
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 # Start app
