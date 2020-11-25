@@ -50,7 +50,6 @@ export const Search = () => {
         setDate(entities['date']);
         setConcepts(data['concepts']['concepts']);
         setSummary(data['summary']['sentences']);
-        console.log(concepts)
     }
 
     return (
